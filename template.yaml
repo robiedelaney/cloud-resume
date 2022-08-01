@@ -1,0 +1,10 @@
+AWSTemplateFormatVersion: '2022-07-28'
+Transform : AWS::Serverless-2022-07-28
+Description: >
+  My SAM App
+
+  A much easier tutorial.
+
+Resources:
+  S3Bucket:
+    Type: AWS::S3::Bucket
