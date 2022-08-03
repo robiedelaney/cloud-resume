@@ -15,10 +15,8 @@
                 <i class="fa fa-times" oneclick=" hideMenu()"></i>
                 <ul>
                     <li><a href="resume site.html">HOME</a></li>
-                    <li><a href="">ABOUT</a></li>
-                    <li><a href="">BLOG</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
                     <li><a href="resume.html">RESUME</a></li>
-                    <li><a href="">CONTACT</a></li>
                 </ul>
             </div>
             <i class="fa fa-bars" oneclick=" showMenu()"></i>
@@ -190,6 +188,21 @@
 			</div>
 		</div>
 	</div>
+
+<section>
+    <script>
+    
+        var navLinks = document.getElementById("navLinks");
+    
+        function showMenu(){
+            navLinks.style.right = "0";
+        }
+        function hideMenu(){
+            navLinks.style.right = "-200px";
+        }
+    
+    </script>
+</section>
 </body>
 </html>
   
