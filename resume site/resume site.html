@@ -1,6 +1,5 @@
 <!DocType html>
 <html>
-<body style="background-color:black;">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robie Delaney Resume</title>
@@ -8,23 +7,58 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/2cc61e3dd6.css">
+
 </head>
 <body>
     <section class="header">
         <nav>
             <a href="resume site.html"><img src="images/Robie Delaney-logos_white.png"></a>
-            <div  class="nav-links">
+            <div  class="nav-links" id="navLinks">
+                <i class="fa fa-times" oneclick=" hideMenu()"></i>
                 <ul>
-                    <li><a href="">HOME</a></li>
+                    <li><a href="resume site.html">HOME</a></li>
                     <li><a href="">ABOUT</a></li>
                     <li><a href="">BLOG</a></li>
-                    <li><a href="">RESUME</a></li>
+                    <li><a href="resume.html">RESUME</a></li>
                     <li><a href="">CONTACT</a></li>
                 </ul>
             </div>
+            <i class="fa fa-bars" oneclick=" showMenu()"></i>
         </nav>
-        
-    </section>   
+<div class="text-box">
+    <h1>Robie Delaney</h1> 
+    <p>Cloud Security Archeitect</p>
+    <a href="" class="hero-btn">Contact Me</a>
+</div>
+
+</section>
+
+<!---About-->
+
+<section class="About">
+    <h1>Who Am I?</h1>
+    <p> I like cloud Security</p>
+    <div class="icons">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+        <i class="fa fa-linkedin" aria-hidden="true"></i>
+    </div>
+</section>
+
+<!------------JavaScript for toggle Menu--------->
+<script>
+    
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+
+</script>
 
 </body>
 </html>
