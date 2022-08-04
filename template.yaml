@@ -1,10 +1,48 @@
-AWSTemplateFormatVersion: '2022-07-28'
-Transform : AWS::Serverless-2022-07-28
-Description: >
-  My SAM App
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'cloud-resume
 
-  A much easier tutorial.
+  Sample SAM Template for cloud-resume
 
+  '
+Globals:
+  Function:
+    Timeout: 3
 Resources:
-  S3Bucket:
+  MyWebsite:
     Type: AWS::S3::Bucket
+    Properties:
+      BucketName:Robie-Delaney-Resume
+  HelloWorldFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: s3://aws-sam-cli-managed-default-samclisourcebucket-1fdm7bokxeys4/cloud-resume/1657479c89d91742e08d668fed4143d2
+      Handler: app.lambda_handler
+      Runtime: python3.9
+      Architectures:
+      - x86_64
+      Events:
+        HelloWorld:
+          Type: Api
+          Properties:
+            Path: /hello
+            Method: get
+    Metadata:
+      SamResourceId: HelloWorldFunction
+Outputs:
+  HelloWorldApi:
+    Description: API Gateway endpoint URL for Prod stage for Hello World function
+    Value:
+      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/
+  HelloWorldFunction:
+    Description: Hello World Lambda Function ARN
+    Value:
+      Fn::GetAtt:
+      - HelloWorldFunction
+      - Arn
+  HelloWorldFunctionIamRole:
+    Description: Implicit IAM Role created for Hello World function
+    Value:
+      Fn::GetAtt:
+      - HelloWorldFunctionRole
+      - Arn
